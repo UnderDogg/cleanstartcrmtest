@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CoreUI CSS -->
-    <link rel="stylesheet" href="{{ asset('vendor/coreui/css/coreui.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/coreui/fontawesome/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/coreui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/font-awesome.min.css') }}">
     <!-- Custom CSS -->
     @stack('css')
 
@@ -48,7 +48,7 @@
     <div class="sidebar">
         <nav class="sidebar-nav">
             <ul class="nav">
-                @each('coreui::menu-item', $coreUI->menu(), 'item')
+                <li>tmp</li>
             </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>
@@ -58,7 +58,7 @@
             <li class="breadcrumb-item active">@yield('title', config('coreui.title', 'CoreUI Laravel Theme by HZ-HBO-ICT'))</li>
         </ol>
         <div class="container-fluid">
-            @yield('body')
+            @yield('content')
         </div>
     </main>
 </div>
@@ -73,12 +73,12 @@
 </footer>
 
     <!-- jQuery first, then Popper.js, Bootstrap, then CoreUI  -->
-    <script src="{{ asset('vendor/coreui/js/jquery.js') }}"></script>
-    <script src="{{ asset('vendor/coreui/js/popper.js') }}"></script>
-    <script src="{{ asset('vendor/coreui/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('vendor/coreui/js/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('vendor/coreui/js/coreui.js') }}"></script>
-    <script src="{{ asset('vendor/coreui/js/coreui-utilities.js') }}"></script>
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/js/popper.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/js/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('/js/coreui.min.js') }}"></script>
+    <script src="{{ asset('/js/coreui-utilities.min.js') }}"></script>
 
     <!-- Custom JS -->
     @stack('js')

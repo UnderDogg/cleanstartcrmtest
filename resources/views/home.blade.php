@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
+@extends('layouts.master')
 @section('page_heading','Dashboard')
-@section('section')
+@section('content')
            
             <!-- /.row -->
             <div class="col-sm-12">

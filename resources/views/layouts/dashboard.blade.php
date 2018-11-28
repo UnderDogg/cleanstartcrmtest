@@ -1,6 +1,6 @@
 @extends('layouts.plane')
 
-@section('body')
+@section('dashboard')
  <div id="wrapper">
 
         <!-- Navigation -->
