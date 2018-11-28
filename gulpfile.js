@@ -76,8 +76,7 @@ gulp.task('css:compile', function() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest('./public/css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./public/css'));
 });
 
 // Minify CSS
@@ -90,8 +89,7 @@ gulp.task('css:minify', ['css:compile'], function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./public/css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./public/css'));
 });
 
 // CSS
@@ -110,8 +108,7 @@ gulp.task('js:minify', function() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest('./public/js'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./public/js'));
 });
 
 // JS
@@ -120,18 +117,8 @@ gulp.task('js', ['js:minify']);
 // Default task
 gulp.task('default', ['css', 'js', 'vendor']);
 
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
-});
-
 // Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function() {
+gulp.task('dev', ['css', 'js'], function() {
   gulp.watch('./resources/sass/*.scss', ['css']);
   gulp.watch('./resources/js/*.js', ['js']);
-  gulp.watch('./rerources/assets/*.html', browserSync.reload);
 });
